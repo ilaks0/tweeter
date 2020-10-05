@@ -3,7 +3,7 @@ article {
   flex-direction: column;
   height: 180px;
   width: 100%;
-  padding: 0.6em;
+  padding: 0.4em;
   border: solid grey 3px;
   margin-bottom: 1em;
   margin-top: 1em;
@@ -16,7 +16,7 @@ article header {
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  flex-basis: 20px;
+  flex-basis: 1.5em;
 }
 article footer {
   font-family: inherit;
@@ -24,7 +24,7 @@ article footer {
   align-items: center;
   justify-content: space-between;
   flex-grow: 1;
-  flex-basis: 20px;
+  flex-basis: 1.5em;
   font-size: 0.8em;
 }
 article div {
@@ -37,4 +37,5 @@ article div {
 
 article:hover {
   box-shadow: 5px 10px #888888;
+  font-weight: bold;
 }
