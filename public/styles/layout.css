@@ -10,7 +10,13 @@ html {
   box-sizing: inherit;
 }
 main {
-  
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
+  background-image: inherit;
+  font-family: inherit;
+  align-self: center;
+  border: solid black;
 }
 
 /*
@@ -22,6 +28,8 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /*
