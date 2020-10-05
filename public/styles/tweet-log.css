@@ -1,0 +1,40 @@
+article {
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  width: 100%;
+  padding: 0.6em;
+  border: solid grey 3px;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+article header {
+  font-family: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-basis: 20px;
+}
+article footer {
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-basis: 20px;
+  font-size: 0.8em;
+}
+article div {
+  font-family: inherit;
+  justify-self: center;
+  padding: 1em;
+  border-bottom: solid 3px;
+  flex-basis: 100px;
+}
+
+article:hover {
+  box-shadow: 5px 10px #888888;
+}
