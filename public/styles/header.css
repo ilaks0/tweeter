@@ -4,6 +4,8 @@ header {
   align-items: center;
   height: 400px;
   width: 100%;
-  background-color: beige;
   justify-content: center;
+  background-color: beige;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+  font-family: inherit;
 }
