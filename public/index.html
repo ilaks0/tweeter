@@ -21,6 +21,7 @@
   <link rel='stylesheet' href='./styles/header.css'>
   <link rel='stylesheet' href='./styles/tweet-log.css'>
 
+  <link rel='stylesheet' href='./styles/anchor-toggle.css'>
   <!-- App JS -->
   <script type="text/javascript" src="./scripts/client.js"></script>
 
@@ -34,7 +35,7 @@
     
   </nav>
 
-  <header class='profile'>
+  <header id='profile-header' class='profile'>
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -59,8 +60,8 @@
       </form>
     </section>
     <section class='tweet-log' id='tweets-container'></section>
-
   </main>
+  <div class='anchor-toggle'><a href='#profile-header'>&#8673;</a></div>
 </body>
 
 </html>
