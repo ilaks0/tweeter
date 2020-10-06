@@ -6,6 +6,15 @@
   border-bottom: 3px solid black;
   background-color: #f4f1ec;
 }
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+.black {
+  color: black;
+}
+
 main form {
   display: flex;
   justify-content: center;

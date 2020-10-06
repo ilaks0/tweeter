@@ -17,7 +17,10 @@ $(document).ready(function () {
   };
 
   const createTweetElement = (tweetData) => {
-    const newName = $('<span>').text(tweetData.user.name);
+    const newAva = $('<img>').attr('src', tweetData.user.avatars);
+    const imgDiv = $('<span>').append(newAva);
+    const nameDiv = $('<span>').text(tweetData.user.name);
+    const newName = $('<span>').append(imgDiv).append(nameDiv);
     const newHandle = $('<span>').text(tweetData.user.handle);
     const newHeader = $('<header>').append(newName).append(newHandle);
     const newContent = $('<div>').text(tweetData.content.text);
@@ -27,12 +30,28 @@ $(document).ready(function () {
     const $newArticle = $('<article>').append(newHeader).append(newContent).append(newFooter);
     return $newArticle;
   };
+
   const renderTweets = (tweetsArr) => {
     for(const element of tweetsArr) {
       const $tweet = createTweetElement(element);
       $('#tweets-container').append($tweet);
     }
   }
+
+  $('form').on('submit',function() {
+    event.preventDefault();
+    // console.log($(this).serialize().length);
+    $.ajax({method: 'POST', url: '/tweets', data: $('form').serialize()})
+    .done(function( msg ) {
+    $.ajax('/tweets',{method: 'GET' })
+    .done(tweetsArray => {
+      renderTweets(tweetsArray);
+    })
+  });
+  })
+
+
+  
 
 
 
