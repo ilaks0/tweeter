@@ -31,7 +31,7 @@ $(document).ready(function () {
     }
   };
 
-  $('form').on('submit', function () {
+  $('form').on('submit', function (event) {
     event.preventDefault();
     $('.error').hide();
     $.ajax({ method: 'POST', url: '/tweets', data: $(this).serialize() })
