@@ -39,3 +39,7 @@ article:hover {
   box-shadow: 5px 10px #888888;
   font-weight: bold;
 }
+.tweet-log {
+  display: flex;
+  flex-direction:column-reverse;
+}
