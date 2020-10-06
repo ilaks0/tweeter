@@ -30,9 +30,8 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <form action='' method='GET'>
-      <button>Write a new tweet</button>
-    </form>
+      <a> Write a new tweet</a>
+    
   </nav>
 
   <header class='profile'>
@@ -54,27 +53,12 @@
         <textarea name="text" id="tweet-text" placeholder='What are you humming about?'></textarea>
         <div>
           <button type="submit">Tweet</button>
+          <span class='error' hidden></span>
           <output name="counter" class="counter" for="tweet-text"></output>
         </div>
       </form>
     </section>
-    <section class='tweet-log' id='tweets-container'>
-      <article>
-        <header>
-          <span>Newton</span>
-          <span>@SirIsaac</span>
-        </header>
-        <div>If I have seen further...giants</div>
-        <footer>
-          <span>
-            10 days ago
-          </span>
-          <span>Like
-          </span>
-        </footer>
-      </article>
-
-    </section>
+    <section class='tweet-log' id='tweets-container'></section>
 
   </main>
 </body>

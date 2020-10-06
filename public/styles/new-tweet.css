@@ -1,10 +1,11 @@
-
 #tweet-text {
   resize: none;
   border: none;
   white-space: nowrap;
   border-bottom: 3px solid black;
   background-color: #f4f1ec;
+  padding-left: 1em;
+  padding-top: 0.5em;
 }
 
 .red {
@@ -13,6 +14,9 @@
 }
 .black {
   color: black;
+}
+.blur {
+  opacity: 0;
 }
 
 main form {
@@ -33,4 +37,20 @@ form div {
 }
 form button {
   align-self: center;
+}
+
+form span {
+  color: red;
+  font-size: 0.8em;
+  border: solid 1px red;
+  border-radius: 5%;
+  padding: 0.3em;
+}
+
+.c-error {
+  /* backgroud: #fff0f4; */
+  background-color: #ecc0cd !important;
+  border: 3px solid #c51244 !important;
+  border-radius: 1.6%; 
+
 }

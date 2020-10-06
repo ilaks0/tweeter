@@ -17,6 +17,23 @@ nav span {
   color: rgba(11, 223, 205, 0.719);
 
 }
-nav form {
+nav a {
   align-self: center;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+nav a:before {
+  content: '\00bb';
+}
+nav a:after {
+  content: ' \00ab';
+
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px #2d9da9;
+  }
+  to {
+    text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+  }
 }
