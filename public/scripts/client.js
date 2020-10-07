@@ -4,9 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
-  $.ajax("/tweets", { method: "GET" }).then((tweets) => {
-    renderTweets(tweets);
-  });
+  $.ajax("/tweets", { method: "GET" }).then((tweets) => renderTweets(tweets));
+  
   const createTweetElement = (tweetData) => {
     const $newAva = $("<img>").attr("src", tweetData.user.avatars);
     const $imgDiv = $("<span>").append($newAva);
@@ -39,7 +38,7 @@ $(document).ready(function () {
     event.preventDefault();
     $(".error").hide();
     $.ajax({ method: "POST", url: "/tweets", data: $(this).serialize() })
-      .done(function (msg) {
+      .done(function () {
         $.ajax("/tweets", { method: "GET" }).done((tweetsArray) => {
           renderTweets(tweetsArray);
         });
