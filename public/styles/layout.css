@@ -14,6 +14,7 @@ html {
 main {
   width: 90%;
   margin: 0 auto;
+  margin-top: 2em;
   background-color: inherit;
   background-image: inherit;
   font-family: inherit;

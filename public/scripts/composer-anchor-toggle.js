@@ -3,7 +3,7 @@ $(document).ready(() => {
   $scrollBtn.hide();
   $(document).scroll(() => scrollFunction());
   const scrollFunction = () => {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
       // $scrollBtn.removeClass('btn-hide');
       $scrollBtn.fadeIn('fast');
     } else {
@@ -11,9 +11,10 @@ $(document).ready(() => {
       // $scrollBtn.addClass('btn-hide');
     }
   };
-  $('.anchor-toggle').click(() => {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+  $scrollBtn.click(() => {
+    $("form").show(1200);
+    document.body.scrollTop = 180;
+    document.documentElement.scrollTop = 180;
   });
 
 

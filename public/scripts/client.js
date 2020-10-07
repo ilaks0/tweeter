@@ -45,11 +45,15 @@ $(document).ready(function () {
         // error handling
         $('#tweet-text').addClass('c-error');
         $('.error').text(xhr.responseJSON.error);
-        if ($(".error").first().is(":hidden")) $(".error").slideDown("slow");
+        if ($(".error").first().is(":hidden")) {
+          $(".error").slideDown("slow");
+        }
       });
   });
   $('nav > a').click(() => {
-    if ($("form").first().is(":hidden")) $("form").slideDown("slow");
+    if ($("form").first().is(":hidden")) {
+      $("form").slideDown("slow");
+    }
     else $("form").slideUp('slow');
   });
 });
