@@ -1,11 +1,10 @@
 $(document).ready(() => {
+
   const $scrollBtn = $(".anchor-toggle");
+  $(document).scroll(() => scrollFunction());
   $scrollBtn.hide();
   const scrollFunction = () => {
-    if (
-      document.body.scrollTop > 180 ||
-      document.documentElement.scrollTop > 180
-    ) {
+    if ($(document).scrollTop() > 170) {
       $("nav > button").hide();
       $scrollBtn.show();
     } else {
@@ -13,26 +12,24 @@ $(document).ready(() => {
       $("nav > button").show();
     }
   };
+
   $scrollBtn.click(() => {
-    if (!$("form").is(":hidden")) {
-      document.body.scrollTop = 120;
-      document.documentElement.scrollTop = 120;
-      setTimeout(() => { // fix timing on button for smoother transition
-        $scrollBtn.hide();
-        $("nav > button").show();
-      }, 800); // smooth scrolling fix
+    
+    if (!$("form").is(":hidden")) { // reveal form, then focus on it
+      $(document).scrollTop(75);
+      $("nav > button").show();
+      $scrollBtn.hide();
       $("#tweet-text").focus();
     } else {
-      document.body.scrollTop = 50;
-      document.documentElement.scrollTop = 50;
+      $(document).scrollTop(75);
+      
       $("form").show(() => {
-        setTimeout(() => { // smooth scrolling fix
-          $scrollBtn.hide();
-          $("#tweet-text").focus();
-          $("nav > button").show();
-        }, 800)
+        $("#tweet-text").focus();
+        $("nav > button").show();
+        scrollFunction();
+
       });
     }
   });
-  $(document).scroll(() => scrollFunction());
+  
 });
