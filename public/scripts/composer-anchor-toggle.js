@@ -28,7 +28,6 @@ $(document).ready(() => {
         $("#tweet-text").focus();
         $("nav > button").show();
         scrollFunction();
-
       });
     }
   });

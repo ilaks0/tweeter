@@ -28,22 +28,20 @@ Interpret keys and values in request data to object format
 - Install all dependencies (using the `npm install` command).
 - Run the development web server using the `npm start` command.
 
-
 ## Final Product
 
-!["URLs Page"](https://github.com/ilaksono/Tiny-App/blob/master/docs/urls-page.png)
-!["Specific URL Edit Page"](https://github.com/ilaksono/Tiny-App/blob/master/docs/urls-show-page.png)
+!["Home Page - Large"](https://github.com/ilaksono/tweeter/blob/master/docs/tweets-page-big.png)
+!["Specific URL Edit Page"](https://github.com/ilaksono/tweeter/blob/master/docs/tweets-page-small.png)
 
 ## Documentation
 
-The following helper functions can be found in /helpers/dbHelpers.js:
+The following functions can be found in /public/scripts:
 
-- `idHelper(str, obj)`: returns true when id(6 char string) is found in db, else false
-- `urlsForUser(str, obj)`: returns obj of urls created by a user, when given user id and url database
-- `urlPrefix(str)`: returns corresponding prefix string to correct URLs, depending on user's input of URL prefix, starting with `http://`, `wwww.`, or lack of either.
-- `getEmailById(str, obj)`: returns corresponding email with user id present in user database, else empty string
-- `hashed(str)`: returns hashed password using bcrypt hashSync method
-- `generateRandomString()`: returns a randomly generated 6 character(a-z | 0-9) string
+- `createTweetElement(obj)`: returns JQ object constructed from object's data properties
+- `timeSincePost(num)`: calculate time since post, returns string to be appended in script
+- `renderTweets(arr)`: use loop iteration to append all tweets to html section container
+- `scrollFunction()`: reveals to-top button when reaching 170px from top of document, else hides the button.
+- `colorCharCounter()`: adds red color to number display when exceeding char limit, assigns number to html element
 
 ## Dependencies
 

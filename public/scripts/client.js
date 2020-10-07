@@ -8,19 +8,21 @@ $(document).ready(function () {
     const $newName = $("<span>").append($imgDiv).append($nameDiv);
     const $newHandle = $("<span>").text(tweetData.user.handle);
     const $newHeader = $("<header>").append($newName).append($newHandle);
+    
     const $newContent = $("<body>").text(tweetData.content.text);
-
     const timeDiff = timeSincePost(tweetData["created_at"]); // calculate time difference since post creation
     const $date = $("<span>").text(timeDiff); 
     const $flag = $("<img>").attr("src", "./images/flag.png");
     const $retweet = $("<img>").attr("src", "./images/retweet.png");
     const $heart = $("<img>").attr("src", "./images/heart.png");
+    
     const $like = $("<div>").append($flag).append($retweet).append($heart);
     const $newFooter = $("<footer>").append($date).append($like);
-    const $newArticle = $("<article>") // append all elements to article parent
-      .append($newHeader)
+    const $newArticle = $("<article>") 
+      .append($newHeader) // append all elements to article parent
       .append($newContent)
       .append($newFooter);
+
     return $newArticle; // return tweet (JQ object)
   };
 
