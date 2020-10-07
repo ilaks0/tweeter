@@ -51,14 +51,14 @@ $(document).ready(function () {
     event.preventDefault();
     $(".error").hide();
     $.ajax({ method: "POST", url: "/tweets", data: $(this).serialize() })
-      .done(function () {
+      .done(() => {
         $.ajax("/tweets", { method: "GET" }).done((tweetsArray) => {
           renderTweets(tweetsArray);
         });
         $(".counter").text(140);
         $("#tweet-text").val("");
       })
-      .fail(function (xhr, status, error) {
+      .fail(xhr => {
         // error handling
         $("#tweet-text").addClass("c-error");
         $(".error").text(xhr.responseJSON.error);
@@ -78,7 +78,7 @@ $(document).ready(function () {
 
   const timeSincePost = (dateEpoch) => {
     let unit = "second";
-    diff = (new Date().getTime() - dateEpoch) / 1000;
+    let diff = (new Date().getTime() - dateEpoch) / 1000;
 
     if (diff >= 60) {
       // convert to minutes

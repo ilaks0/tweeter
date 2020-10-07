@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   const charLimit = 140;
 
   $("#tweet-text")
