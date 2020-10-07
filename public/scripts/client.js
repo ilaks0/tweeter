@@ -15,11 +15,11 @@ $(document).ready(function () {
     const $newHeader = $("<header>").append($newName).append($newHandle);
     const $newContent = $("<body>").text(tweetData.content.text);
 
-    const timeDiff = timeSincePost(tweetData['created_at']);
+    const timeDiff = timeSincePost(tweetData["created_at"]);
     const $date = $("<span>").text(timeDiff);
-    const $flag = $('<img>').attr('src', './images/flag.png');
-    const $retweet = $('<img>').attr('src', './images/retweet.png');
-    const $heart = $('<img>').attr('src', './images/heart.png');
+    const $flag = $("<img>").attr("src", "./images/flag.png");
+    const $retweet = $("<img>").attr("src", "./images/retweet.png");
+    const $heart = $("<img>").attr("src", "./images/heart.png");
     const $like = $("<div>").append($flag).append($retweet).append($heart);
     const $newFooter = $("<footer>").append($date).append($like);
     const $newArticle = $("<article>")
@@ -33,11 +33,12 @@ $(document).ready(function () {
     $("#tweets-container").empty();
     for (const element of tweetsArr) {
       const $tweet = createTweetElement(element);
-      $($tweet).hover(function () {
-        $('footer > div', this).addClass('hover-div');
-      },
-        () => {
-          $('footer > div', this).removeClass('hover-div');
+      $($tweet).hover(
+        function () {
+          $("footer > div", this).addClass("hover-div");
+        },
+        function () {
+          $("footer > div", this).removeClass("hover-div");
         }
       );
       $("#tweets-container").append($tweet);
@@ -52,7 +53,7 @@ $(document).ready(function () {
         $.ajax("/tweets", { method: "GET" }).done((tweetsArray) => {
           renderTweets(tweetsArray);
         });
-        $('.counter').text(140);
+        $(".counter").text(140);
         $("#tweet-text").val("");
       })
       .fail(function (xhr, status, error) {
@@ -64,49 +65,46 @@ $(document).ready(function () {
         }
       });
   });
-  // $('article').hover(() => {
-  //   $('article > div').addClass('hover-opacity');
-  // })
-
 
   $("nav > a").click(() => {
     if ($("form").first().is(":hidden")) {
       $("form").slideDown("slow", () => {
-        $('#tweet-text').focus();
+        $("#tweet-text").focus();
       });
     } else $("form").slideUp("slow");
   });
 
-  const timeSincePost = dateEpoch => {
-    let unit = 'seconds';
-    diff = ((new Date).getTime() - dateEpoch) / 1000;
+  const timeSincePost = (dateEpoch) => {
+    let unit = "second";
+    diff = (new Date().getTime() - dateEpoch) / 1000;
 
-    if (diff >= 60) { // convert to minutes
+    if (diff >= 60) {
+      // convert to minutes
       diff /= 60;
-      unit = 'minute';
-      if (diff >= 60) { // '' hours
+      unit = "minute";
+      if (diff >= 60) {
+        // '' hours
         diff /= 60;
-        unit = 'hour';
-        if (diff >= 24) { // '' days
+        unit = "hour";
+        if (diff >= 24) {
+          // '' days
           diff /= 24;
-          unit = 'day';
-          if (diff >= 30) { // '' months
+          unit = "day";
+          if (diff >= 30) {
+            // '' months
             diff /= 30;
-            unit = 'month';
-            if (diff >= 12) { // '' years
+            unit = "month";
+            if (diff >= 12) {
+              // '' years
               diff /= 12;
-              unit = 'year';
+              unit = "year";
             }
           }
         }
       }
     }
     diff = parseInt(diff);
-    if (diff > 1)
-      unit += 's';
+    if (diff !== 1) unit += "s";
     return `${diff} ${unit} ago`;
   };
-
-
-
 });
