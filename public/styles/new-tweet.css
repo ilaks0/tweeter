@@ -8,7 +8,6 @@
   padding-top: 0.5em;
   width: 90%;
   align-self: center;
-
 }
 
 .red {
@@ -16,15 +15,14 @@
   font-weight: bold;
 }
 
-.blur {
-  opacity: 0;
-}
+.blur { opacity: 0; }
 
 main form {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 form button {
   font-family: Bungee;
   background-color: hsla(258, 62%, 60%, 0.678);
@@ -32,9 +30,9 @@ form button {
   align-self: center;
   margin-left: 1.5em;
 }
-.counter {
-  margin-right: 1.5em;
-}
+
+.counter { margin-right: 1.5em; }
+
 form div {
   align-items: center;
   padding: 0.5em;
@@ -51,9 +49,7 @@ form span {
 }
 
 .c-error {
-  /* backgroud: #fff0f4; */
   background-color: #ecc0cd !important;
   border: 3px solid #c51244 !important;
   border-radius: 1.6%; 
-
 }

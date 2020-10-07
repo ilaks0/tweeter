@@ -32,6 +32,5 @@ $(document).ready(() => {
       });
     }
   });
-
   $(document).scroll(() => scrollFunction());
 });

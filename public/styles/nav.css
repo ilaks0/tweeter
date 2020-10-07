@@ -6,30 +6,28 @@ nav {
   height: 120px;
   align-items: flex-end;
   font-family: Bungee;
-  position: fixed; 
+  position: fixed;
   top: 0;
   width: 100%;
-  background-color: hsla(258, 62%, 60%, 0) ;
-  
+  background-color: hsla(258, 62%, 60%, 0);
 }
+
 nav span {
   font-size: 2em;
   color: rgba(11, 223, 205, 0.719);
 }
+
 nav button {
   align-self: center;
   animation: glow 1.5s ease-in-out infinite alternate;
   cursor: pointer;
   background-color: hsla(258, 72%, 70%, 0.078);
   border: none;
-  
 }
-nav button:before {
-  content: '\00bb';
-}
-nav button:after {
-  content: ' \00ab';
-}
+
+nav button:before { content: "\00bb"; }
+
+nav button:after { content: " \00ab"; }
 @keyframes glow {
   from {
     text-shadow: 0 0 10px #4d5b5f;
