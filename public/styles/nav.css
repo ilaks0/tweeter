@@ -1,15 +1,25 @@
 nav {
   padding: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  box-sizing: border-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   height: 120px;
-  align-items: flex-end;
   font-family: Bungee;
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: hsla(258, 62%, 60%, 0);
+  background-color: rgba(128, 90, 216, 0);
 }
 
 nav span {
@@ -18,16 +28,33 @@ nav span {
 }
 
 nav button {
-  align-self: center;
-  animation: glow 1.5s ease-in-out infinite alternate;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+          animation: glow 1.5s ease-in-out infinite alternate;
   cursor: pointer;
-  background-color: hsla(258, 72%, 70%, 0.078);
+  background-color: rgba(156, 123, 234, 0.078);
   border: none;
 }
 
-nav button:before { content: "\00bb"; }
+nav button:before {
+  content: "\00bb";
+}
 
-nav button:after { content: " \00ab"; }
+nav button:after {
+  content: " \00ab";
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #4d5b5f;
+  }
+  to {
+    text-shadow: 0 0 40px #34b3c1, 0 0 30px #0cc0d4;
+  }
+}
+
 @keyframes glow {
   from {
     text-shadow: 0 0 10px #4d5b5f;
@@ -36,3 +63,4 @@ nav button:after { content: " \00ab"; }
     text-shadow: 0 0 40px #34b3c1, 0 0 30px #0cc0d4;
   }
 }
+/*# sourceMappingURL=nav.css.map */
