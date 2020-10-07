@@ -5,7 +5,7 @@
  */
 $(document).ready(function () {
   $.ajax("/tweets", { method: "GET" }).then((tweets) => renderTweets(tweets));
-  
+
   const createTweetElement = (tweetData) => {
     const $newAva = $("<img>").attr("src", tweetData.user.avatars);
     const $imgDiv = $("<span>").append($newAva);
@@ -14,9 +14,9 @@ $(document).ready(function () {
     const $newHandle = $("<span>").text(tweetData.user.handle);
     const $newHeader = $("<header>").append($newName).append($newHandle);
     const $newContent = $("<div>").text(tweetData.content.text);
-    const $date = $("<span>").text(
-      new Date(tweetData["created_at"]).toUTCString()
-    );
+
+    const timeDiff = timeSincePost(tweetData['created_at']);
+    const $date = $("<span>").text(timeDiff);
     const $like = $("<span>").text("Like");
     const $newFooter = $("<footer>").append($date).append($like);
     const $newArticle = $("<article>")
@@ -42,6 +42,7 @@ $(document).ready(function () {
         $.ajax("/tweets", { method: "GET" }).done((tweetsArray) => {
           renderTweets(tweetsArray);
         });
+        $('.counter').text(140);
         $("#tweet-text").val("");
       })
       .fail(function (xhr, status, error) {
@@ -55,7 +56,49 @@ $(document).ready(function () {
   });
   $("nav > a").click(() => {
     if ($("form").first().is(":hidden")) {
-      $("form").slideDown("slow");
+      $("form").slideDown("slow", () => {
+        $('#tweet-text').focus();
+      });
     } else $("form").slideUp("slow");
   });
+
+  const timeSincePost = dateEpoch => {
+    let unit = 'seconds';
+    diff = ((new Date).getTime() - dateEpoch) / 1000;
+    
+    
+    
+    
+    
+    if (diff >= 2592000) {
+      diff = parseInt(diff / 2592000);
+      unit = 'month';
+      if (diff > 1)
+        unit += 's';
+    }
+    else if (diff >= 86400) {
+      diff = parseInt(diff / 86400);
+      unit = 'day';
+      if (diff > 1)
+        unit += 's';
+    }
+    else if (diff >= 3600) {
+      diff = parseInt(diff / 3600);
+      unit = 'hour';
+      if (diff > 1)
+        unit += 's';
+    }
+    else if (diff >= 60) {
+      diff = parseInt(diff / 60);
+      unit = 'minute';
+      if (diff > 1)
+        unit += 's';
+    }
+
+
+    return `${diff} ${unit} ago`;
+  };
+
+
+
 });

@@ -13,15 +13,11 @@
   color: rgba(11, 223, 205, 0.719);
   cursor: pointer;
 }
-.anchor-toggle:hover {
-  font-size: 1.01em;
-}
+
+.anchor-toggle:hover { font-size: 1.01em; }
+
 button {
   outline: none;
   cursor: pointer;
 }
 
-.btn-hide {
-  display: none !important;
-
-}
