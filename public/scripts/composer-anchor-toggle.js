@@ -6,11 +6,11 @@ $(document).ready(() => {
       document.body.scrollTop > 180 ||
       document.documentElement.scrollTop > 180
       ) {
-        $("nav > a").hide();
+        $("nav > button").hide();
         $scrollBtn.fadeIn("fast");
       } else {
         $scrollBtn.hide();
-        $("nav > a").show();
+        $("nav > button").show();
       }
     };
     $scrollBtn.click(() => {
@@ -20,7 +20,7 @@ $(document).ready(() => {
     if(!$('form').is(':hidden')) {
       setTimeout(() => {
         $scrollBtn.hide();
-        $('nav > a').show();
+        $('nav > button').show();
       }, 700)
       
       $("#tweet-text").focus();
@@ -29,7 +29,7 @@ $(document).ready(() => {
       $("form").show(() => {
       $scrollBtn.hide();
       $("#tweet-text").focus();
-      $('nav > a').show();
+      $('nav > button').show();
     });
     }
   });

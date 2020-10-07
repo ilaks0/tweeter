@@ -68,7 +68,7 @@ $(document).ready(function () {
       });
   });
 
-  $("nav > a").click(() => {
+  $("nav > button").click(() => {
     if ($("form").first().is(":hidden")) {
       $("form").slideDown("slow", () => {
         $("#tweet-text").focus();
