@@ -7,7 +7,7 @@ $(document).ready(() => {
       document.documentElement.scrollTop > 180
       ) {
         $("nav > button").hide();
-        $scrollBtn.fadeIn("fast");
+        $scrollBtn.show();
       } else {
         $scrollBtn.hide();
         $("nav > button").show();
