@@ -17,18 +17,20 @@ $(document).ready(() => {
     if (!$("form").is(":hidden")) {
       document.body.scrollTop = 120;
       document.documentElement.scrollTop = 120;
-      setTimeout(() => {
+      setTimeout(() => { // fix timing on button for smoother transition
         $scrollBtn.hide();
         $("nav > button").show();
-      }, 500);
+      }, 800); // smooth scrolling fix
       $("#tweet-text").focus();
     } else {
       document.body.scrollTop = 50;
       document.documentElement.scrollTop = 50;
       $("form").show(() => {
-        $scrollBtn.hide();
-        $("#tweet-text").focus();
-        $("nav > button").show();
+        setTimeout(() => { // smooth scrolling fix
+          $scrollBtn.hide();
+          $("#tweet-text").focus();
+          $("nav > button").show();
+        }, 800)
       });
     }
   });
