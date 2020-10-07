@@ -36,9 +36,11 @@ $(document).ready(function () {
       $($tweet).hover(
         function () {
           $("footer > div", this).addClass("hover-div");
+          $("header img", this). addClass('hover-div');
         },
         function () {
           $("footer > div", this).removeClass("hover-div");
+          $("header img", this). removeClass('hover-div');
         }
       );
       $("#tweets-container").append($tweet);
