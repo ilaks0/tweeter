@@ -1,11 +1,12 @@
 #tweet-text {
   resize: none;
   border: none;
-  white-space: nowrap;
+  white-space: textwrap;
   border-bottom: 3px solid black;
   background-color: #f4f1ec;
   padding-left: 1em;
   padding-top: 0.5em;
+
 }
 
 .red {
