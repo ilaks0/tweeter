@@ -15,10 +15,10 @@ nav {
 nav span {
   font-size: 2em;
   color: rgba(11, 223, 205, 0.719);
-
 }
 nav a {
   align-self: center;
+  cursor: pointer;
   animation: glow 2s ease-in-out infinite alternate;
 }
 nav a:before {
@@ -26,7 +26,6 @@ nav a:before {
 }
 nav a:after {
   content: ' \00ab';
-
 }
 
 @keyframes glow {

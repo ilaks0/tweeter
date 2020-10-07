@@ -22,7 +22,7 @@ module.exports = function(DataHelpers) {
       res.status(400).json({ error: 'invalid request: post cannot be empty'});
       return;
     }
-    if ( req.body.text.length > 140 ) return res.status(400).json({error: 'exceeded 140 character limit'});
+    if ( req.body.text.length > 140 ) return res.status(400).json({error: 'invalid request: exceeded character limit'});
 
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {

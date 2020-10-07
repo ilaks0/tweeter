@@ -9,6 +9,7 @@ article {
   margin-bottom: 1em;
   margin-top: 1em;
 }
+
 article span {
   display: flex;
   flex-direction: row;
@@ -26,10 +27,12 @@ article header {
   font-size: 0.8em;
   flex-basis: 1.1em;
 }
+
 article img {
   opacity: 0.3;
   width: 40px;
 }
+
 article footer {
   font-family: inherit;
   display: flex;
@@ -37,8 +40,8 @@ article footer {
   justify-content: space-between;
   flex-basis: 10%;
   font-size: 0.8em;
-
 }
+
 article div {
   font-family: inherit;
   justify-self: center;
@@ -47,11 +50,11 @@ article div {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: auto;
-  
+  padding-left: 0.6em;
+  padding-right: 0.6em;
 }
 
 article:hover {
   box-shadow: 5px 10px #888888;
   font-weight: bold;
-  
 }
