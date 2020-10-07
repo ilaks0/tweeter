@@ -13,11 +13,14 @@ $(document).ready(function () {
     const $newName = $("<span>").append($imgDiv).append($nameDiv);
     const $newHandle = $("<span>").text(tweetData.user.handle);
     const $newHeader = $("<header>").append($newName).append($newHandle);
-    const $newContent = $("<div>").text(tweetData.content.text);
+    const $newContent = $("<body>").text(tweetData.content.text);
 
     const timeDiff = timeSincePost(tweetData['created_at']);
     const $date = $("<span>").text(timeDiff);
-    const $like = $("<span>").text("Like");
+    const $flag = $('<img>').attr('src', './images/flag.png');
+    const $retweet = $('<img>').attr('src', './images/retweet.png');
+    const $heart = $('<img>').attr('src', './images/heart.png');
+    const $like = $("<div>").append($flag).append($retweet).append($heart);
     const $newFooter = $("<footer>").append($date).append($like);
     const $newArticle = $("<article>")
       .append($newHeader)
@@ -30,6 +33,13 @@ $(document).ready(function () {
     $("#tweets-container").empty();
     for (const element of tweetsArr) {
       const $tweet = createTweetElement(element);
+      $($tweet).hover(function () {
+        $('footer > div', this).addClass('hover-div');
+      },
+        () => {
+          $('footer > div', this).removeClass('hover-div');
+        }
+      );
       $("#tweets-container").append($tweet);
     }
   };
@@ -54,6 +64,11 @@ $(document).ready(function () {
         }
       });
   });
+  // $('article').hover(() => {
+  //   $('article > div').addClass('hover-opacity');
+  // })
+
+
   $("nav > a").click(() => {
     if ($("form").first().is(":hidden")) {
       $("form").slideDown("slow", () => {

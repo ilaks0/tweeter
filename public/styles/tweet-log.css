@@ -33,16 +33,30 @@ article img {
   width: 40px;
 }
 
+article div{
+  justify-self: flex-end;
+  opacity: 0;
+  /* display: none; */
+}
+
+article div img {
+  /* width: 3%; */
+  width: 15px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
 article footer {
   font-family: inherit;
   display: flex;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   justify-content: space-between;
-  flex-basis: 10%;
+  /* flex-basis: 10%; */
   font-size: 0.8em;
+  flex-direction: row;
 }
 
-article div {
+article body {
   font-family: inherit;
   justify-self: center;
   padding: 0.1em;
@@ -57,4 +71,9 @@ article div {
 article:hover {
   box-shadow: 5px 10px #888888;
   font-weight: bold;
+}
+
+.hover-div {
+  opacity: 0.8;
+  /* display: block; */
 }
