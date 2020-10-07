@@ -55,16 +55,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .profile {
-    width: 37%;
-  }
-  .container {
-    width: 55%;
-    padding-top: 150px;
-  }
-}
-
-@media (min-width: 1024px) {
   nav {
     background-color: hsla(258, 62%, 60%, 0.678);
   }
@@ -73,8 +63,13 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
+  .container {
+    width: 55%;
+    padding-top: 150px;
+  }
   .profile {
     padding-top: 380px;
     padding-bottom: 380px;
+    width: 37%;
   }
 }

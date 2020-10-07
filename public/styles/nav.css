@@ -20,7 +20,9 @@ nav button {
   align-self: center;
   animation: glow 1.5s ease-in-out infinite alternate;
   cursor: pointer;
-  background-color: hsla(258, 72%, 70%, 0.678);
+  background-color: hsla(258, 72%, 70%, 0.078);
+  border: none;
+  
 }
 nav button:before {
   content: '\00bb';

@@ -6,6 +6,8 @@
   background-color: #f4f1ec;
   padding-left: 1em;
   padding-top: 0.5em;
+  width: 90%;
+  align-self: center;
 
 }
 
@@ -28,6 +30,10 @@ form button {
   background-color: hsla(258, 62%, 60%, 0.678);
   color: #f4f1ec;
   align-self: center;
+  margin-left: 1.5em;
+}
+.counter {
+  margin-right: 1.5em;
 }
 form div {
   align-items: center;
