@@ -1,0 +1,10 @@
+@import './nav';
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #4d5b5f;
+  }
+  to {
+    text-shadow: 0 0 40px #34b3c1, 0 0 30px #0cc0d4;
+  }
+}
