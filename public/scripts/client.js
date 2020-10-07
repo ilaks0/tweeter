@@ -1,49 +1,44 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(document).ready(function () {
   $.ajax("/tweets", { method: "GET" }).then((tweets) => renderTweets(tweets));
 
-  const createTweetElement = (tweetData) => {
+  const createTweetElement = (tweetData) => { // construct each object and tag with text data
     const $newAva = $("<img>").attr("src", tweetData.user.avatars);
-    const $imgDiv = $("<span>").append($newAva);
+    const $imgDiv = $("<span>").append($newAva); // append each tag to its parent
     const $nameDiv = $("<span>").text(tweetData.user.name);
     const $newName = $("<span>").append($imgDiv).append($nameDiv);
     const $newHandle = $("<span>").text(tweetData.user.handle);
     const $newHeader = $("<header>").append($newName).append($newHandle);
     const $newContent = $("<body>").text(tweetData.content.text);
 
-    const timeDiff = timeSincePost(tweetData["created_at"]);
-    const $date = $("<span>").text(timeDiff);
+    const timeDiff = timeSincePost(tweetData["created_at"]); // calculate time difference since post creation
+    const $date = $("<span>").text(timeDiff); 
     const $flag = $("<img>").attr("src", "./images/flag.png");
     const $retweet = $("<img>").attr("src", "./images/retweet.png");
     const $heart = $("<img>").attr("src", "./images/heart.png");
     const $like = $("<div>").append($flag).append($retweet).append($heart);
     const $newFooter = $("<footer>").append($date).append($like);
-    const $newArticle = $("<article>")
+    const $newArticle = $("<article>") // append all elements to article parent
       .append($newHeader)
       .append($newContent)
       .append($newFooter);
-    return $newArticle;
+    return $newArticle; // return tweet (JQ object)
   };
 
   const renderTweets = (tweetsArr) => {
-    $("#tweets-container").empty();
+    $("#tweets-container").empty(); // empty tweet section to prevent duplication
     for (const element of tweetsArr) {
       const $tweet = createTweetElement(element);
-      $($tweet).hover(
+      $($tweet).hover( // add hover event handler to each article
         function () {
-          $("footer > div", this).addClass("hover-div");
-          $("header img", this).addClass("hover-div");
+          $("footer > div", this).addClass("hover-div"); // on hover, footer icons become visible
+          $("header img", this).addClass("hover-div"); // avatar img more visible
         },
         function () {
-          $("footer > div", this).removeClass("hover-div");
+          $("footer > div", this).removeClass("hover-div"); // no longer hovered, remove visibility
           $("header img", this).removeClass("hover-div");
         }
       );
-      $("#tweets-container").append($tweet);
+      $("#tweets-container").append($tweet); // inject tweet into html container
     }
   };
 
@@ -55,8 +50,8 @@ $(document).ready(function () {
         $.ajax("/tweets", { method: "GET" }).done((tweetsArray) => {
           renderTweets(tweetsArray);
         });
-        $(".counter").text(140);
-        $("#tweet-text").val("");
+        $(".counter").text(140); // reset and show char count after submitting
+        $("#tweet-text").val(""); // empty text area
       })
       .fail(xhr => {
         // error handling
@@ -68,15 +63,15 @@ $(document).ready(function () {
       });
   });
 
-  $("nav > button").click(() => {
+  $("nav > button").click(() => { // compose button in nav - toggle form's hideability
     if ($("form").first().is(":hidden")) {
-      $("form").slideDown("slow", () => {
+      $("form").slideDown("fast", () => {
         $("#tweet-text").focus();
       });
-    } else $("form").slideUp("slow");
+    } else $("form").slideUp("fast");
   });
 
-  const timeSincePost = (dateEpoch) => {
+  const timeSincePost = (dateEpoch) => { // calculate time difference since post creation
     let unit = "second";
     let diff = (new Date().getTime() - dateEpoch) / 1000;
 

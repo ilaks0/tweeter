@@ -3,8 +3,9 @@ $(document).ready(() => {
   const $scrollBtn = $(".anchor-toggle");
   $(document).scroll(() => scrollFunction());
   $scrollBtn.hide();
-  const scrollFunction = () => {
-    if ($(document).scrollTop() > 170) {
+
+  const scrollFunction = () => { // function to show/hide scroll button on scroll event
+    if ($(document).scrollTop() > 170) { // show hidden button when window reaches 170px
       $("nav > button").hide();
       $scrollBtn.show();
     } else {
@@ -13,10 +14,10 @@ $(document).ready(() => {
     }
   };
 
-  $scrollBtn.click(() => {
+  $scrollBtn.click(() => { // scroll back to top when button clicked
     
     if (!$("form").is(":hidden")) { // reveal form, then focus on it
-      $(document).scrollTop(75);
+      $(document).scrollTop(75); // scroll 75px - suitable for both media types
       $("nav > button").show();
       $scrollBtn.hide();
       $("#tweet-text").focus();
