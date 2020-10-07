@@ -1,4 +1,4 @@
-.anchor-toggle                                                                                                                                                                                                                                                                                                                                                                                                                 {
+.anchor-toggle {
   border-radius: 100%;
   background-color: hsla(258, 62%, 60%, 0.678);
   width: 2em;
@@ -6,11 +6,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   position: fixed;
   bottom: 2.5em;
   right: 2.5em;
-}
-
-.anchor-toggle a {
   color: rgba(11, 223, 205, 0.719);
+  cursor: pointer;
+}
+.anchor-toggle:hover {
+  font-size: 1.01em;
+}
+button {
+  outline: none;
+}
+.btn-hide {
+  display: none !important;
+
 }
