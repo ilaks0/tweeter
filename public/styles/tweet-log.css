@@ -36,11 +36,9 @@ article img {
 article div{
   justify-self: flex-end;
   opacity: 0;
-  /* display: none; */
 }
 
 article div img {
-  /* width: 3%; */
   width: 15px;
   margin-left: 3px;
   margin-right: 3px;
@@ -49,9 +47,7 @@ article div img {
 article footer {
   font-family: inherit;
   display: flex;
-  /* align-items: flex-start; */
   justify-content: space-between;
-  /* flex-basis: 10%; */
   font-size: 0.8em;
   flex-direction: row;
 }
@@ -59,7 +55,8 @@ article footer {
 article body {
   font-family: inherit;
   justify-self: center;
-  padding: 0.1em;
+  padding-top: 0.1em;
+  padding-bottom: 0.2em;
   border-bottom: solid 3px;
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -73,7 +70,4 @@ article:hover {
   font-weight: bold;
 }
 
-.hover-div {
-  opacity: 0.8;
-  /* display: block; */
-}
+.hover-div { opacity: 0.8; }
