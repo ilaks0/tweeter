@@ -65,37 +65,30 @@ $(document).ready(function () {
   const timeSincePost = dateEpoch => {
     let unit = 'seconds';
     diff = ((new Date).getTime() - dateEpoch) / 1000;
-    
-    
-    
-    
-    
-    if (diff >= 2592000) {
-      diff = parseInt(diff / 2592000);
-      unit = 'month';
-      if (diff > 1)
-        unit += 's';
-    }
-    else if (diff >= 86400) {
-      diff = parseInt(diff / 86400);
-      unit = 'day';
-      if (diff > 1)
-        unit += 's';
-    }
-    else if (diff >= 3600) {
-      diff = parseInt(diff / 3600);
-      unit = 'hour';
-      if (diff > 1)
-        unit += 's';
-    }
-    else if (diff >= 60) {
-      diff = parseInt(diff / 60);
+
+    if (diff >= 60) {
+      diff /= 60;
       unit = 'minute';
-      if (diff > 1)
-        unit += 's';
+      if (diff >= 60) {
+        diff /= 60;
+        unit = 'hour';
+        if (diff >= 24) {
+          diff /= 24;
+          unit = 'day';
+          if (diff >= 30) {
+            diff /= 30;
+            unit = 'month';
+            if (diff >= 12) {
+              diff /= 12;
+              unit = 'year';
+            }
+          }
+        }
+      }
     }
-
-
+    diff = parseInt(diff);
+    if (diff > 1)
+      unit += 's';
     return `${diff} ${unit} ago`;
   };
 
