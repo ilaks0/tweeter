@@ -81,19 +81,19 @@ $(document).ready(function () {
     let unit = 'seconds';
     diff = ((new Date).getTime() - dateEpoch) / 1000;
 
-    if (diff >= 60) {
+    if (diff >= 60) { // convert to minutes
       diff /= 60;
       unit = 'minute';
-      if (diff >= 60) {
+      if (diff >= 60) { // '' hours
         diff /= 60;
         unit = 'hour';
-        if (diff >= 24) {
+        if (diff >= 24) { // '' days
           diff /= 24;
           unit = 'day';
-          if (diff >= 30) {
+          if (diff >= 30) { // '' months
             diff /= 30;
             unit = 'month';
-            if (diff >= 12) {
+            if (diff >= 12) { // '' years
               diff /= 12;
               unit = 'year';
             }

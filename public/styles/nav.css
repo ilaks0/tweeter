@@ -10,7 +10,6 @@ nav {
   position: fixed; 
   top: 0;
   width: 100%;
-
 }
 nav span {
   font-size: 2em;
@@ -27,7 +26,6 @@ nav a:before {
 nav a:after {
   content: ' \00ab';
 }
-
 @keyframes glow {
   from {
     text-shadow: 0 0 20px #2d9da9;
