@@ -7,13 +7,13 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
-
 }
 main {
   width: 90%;
-  margin: 0 auto;
   margin-top: 2em;
   background-color: inherit;
   background-image: inherit;
@@ -29,15 +29,52 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   display: flex;
   flex-direction: column;
 }
 
 .tweet-log {
   display: flex;
-  flex-direction:column-reverse;
+  flex-direction: column-reverse;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+.media-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.container,
+.profile {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .profile {
+    width: 37%;
+  }
+  .container {
+    width: 55%;
+    padding-top: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav {
+    background-color: hsla(258, 62%, 60%, 0.678);
+  }
+  .media-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile {
+    padding-top: 380px;
+    padding-bottom: 380px;
+  }
+}

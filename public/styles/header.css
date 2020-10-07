@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   height: 520px;
-  width: 100%;
+  /* width: 100%; */
   justify-content: center;
   background-color: rgb(215, 213, 216);
   background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");

@@ -2,7 +2,6 @@ nav {
   padding: 1.5em;
   display: flex;
   justify-content: space-around;
-  background-color: hsla(258, 62%, 60%, 0.678);
   box-sizing: border-box;
   height: 120px;
   align-items: flex-end;
@@ -10,6 +9,8 @@ nav {
   position: fixed; 
   top: 0;
   width: 100%;
+  background-color: hsla(258, 62%, 60%, 0) ;
+  
 }
 nav span {
   font-size: 2em;
