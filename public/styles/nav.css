@@ -5,15 +5,15 @@ nav {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+      justify-content: space-around;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   height: 120px;
   font-family: Bungee;
   position: fixed;
@@ -29,10 +29,10 @@ nav span {
 
 nav button {
   -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   -webkit-animation: glow 1.5s ease-in-out infinite alternate;
-  animation: glow 1.5s ease-in-out infinite alternate;
+          animation: glow 1.5s ease-in-out infinite alternate;
   cursor: pointer;
   background-color: rgba(156, 123, 234, 0.078);
   border: none;
@@ -44,10 +44,6 @@ nav button:before {
 
 nav button:after {
   content: " \00ab";
-}
-
-nav button:hover {
-  color: #545149;
 }
 
 @-webkit-keyframes glow {
