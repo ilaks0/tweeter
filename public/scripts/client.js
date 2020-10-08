@@ -53,7 +53,6 @@ $(document).ready(function () {
       $("#tweet-text").val().length > 0 &&
       $("#tweet-text").val().length <= 140
     ) {
-      
       textValue = $("#tweet-text").val(); // store text value for ajax request
       $("#tweet-text").val(""); // empty field
     }

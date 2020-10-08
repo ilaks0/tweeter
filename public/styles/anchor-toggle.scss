@@ -1,0 +1,25 @@
+@import './variables';
+
+.anchor-toggle {
+  border-radius: 100%;
+  background-color: $bgcolor-nav;
+  width: 2em;
+  height: 2em;
+  @include flex-template(row, center, center);
+  border: none;
+  position: fixed;
+  bottom: 2.5em;
+  right: 2.5em;
+  color: rgba(11, 223, 205, 0.719);
+  cursor: $btn-ptr;
+}
+
+.anchor-toggle:hover {
+  width: 2.04em;
+  height: 2.04em;
+}
+
+button {
+  outline: none;
+  cursor: $btn-ptr;
+}

@@ -1,0 +1,47 @@
+@import "./variables";
+
+form {
+  @include flex-template(column, center, normal);
+  textarea {
+    resize: none;
+    border: none;
+    white-space: textwrap;
+    border-bottom: 3px solid black;
+    background-color: $bgbody;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    width: 90%;
+    align-self: center;
+  }
+
+  button {
+    font-family: $font-stack2;
+    background-color: $bgcolor-nav;
+    color: $bgbody;
+    align-self: center;
+    margin-left: 1.5em;
+  }
+
+  div {
+    padding: 0.5em;
+    @include flex-template(row, space-between, center);
+  }
+
+  span {
+    color: red;
+    font-size: 0.8em;
+    border: solid 1px red;
+    border-radius: 5%;
+    padding: 0.3em;
+  }
+}
+
+.counter {
+  margin-right: 1.5em;
+}
+
+.c-error {
+  background-color: #ecc0cd !important;
+  border: 3px solid #c51244 !important;
+  border-radius: 1.6%;
+}

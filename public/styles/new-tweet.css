@@ -1,4 +1,20 @@
-#tweet-text {
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: normal;
+      -ms-flex-align: normal;
+          align-items: normal;
+}
+
+form textarea {
   resize: none;
   border: none;
   white-space: textwrap;
@@ -7,37 +23,36 @@
   padding-left: 1em;
   padding-top: 0.5em;
   width: 90%;
-  align-self: center;
-}
-
-.red {
-  color: red;
-  font-weight: bold;
-}
-
-.blur { opacity: 0; }
-
-main form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 form button {
   font-family: Bungee;
-  background-color: hsla(258, 62%, 60%, 0.678);
+  background-color: rgba(128, 90, 216, 0.678);
   color: #f4f1ec;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   margin-left: 1.5em;
 }
 
-.counter { margin-right: 1.5em; }
-
 form div {
-  align-items: center;
   padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 form span {
@@ -48,8 +63,13 @@ form span {
   padding: 0.3em;
 }
 
+.counter {
+  margin-right: 1.5em;
+}
+
 .c-error {
   background-color: #ecc0cd !important;
   border: 3px solid #c51244 !important;
-  border-radius: 1.6%; 
+  border-radius: 1.6%;
 }
+/*# sourceMappingURL=new-tweet.css.map */
