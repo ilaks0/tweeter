@@ -1,7 +1,8 @@
 $(document).ready(function () {
   $.ajax("/tweets", { method: "GET" }).then((tweets) => renderTweets(tweets));
 
-  const createTweetElement = (tweetData) => { // construct each object and tag with text data
+  const createTweetElement = (tweetData) => {
+    // construct each object and tag with text data
     const $newAva = $("<img>").attr("src", tweetData.user.avatars);
     const $imgDiv = $("<span>").append($newAva); // append each tag to its parent
     const $nameDiv = $("<span>").text(tweetData.user.name);
@@ -11,7 +12,7 @@ $(document).ready(function () {
     const $newContent = $("<body>").text(tweetData.content.text);
 
     const timeDiff = timeSincePost(tweetData["created_at"]); // calculate time difference since post creation
-    const $date = $("<span>").text(timeDiff); 
+    const $date = $("<span>").text(timeDiff);
     const $flag = $("<img>").attr("src", "./images/flag.png");
     const $retweet = $("<img>").attr("src", "./images/retweet.png");
     const $heart = $("<img>").attr("src", "./images/heart.png");
@@ -28,7 +29,8 @@ $(document).ready(function () {
     $("#tweets-container").empty(); // empty tweet section to prevent duplication
     for (const element of tweetsArr) {
       const $tweet = createTweetElement(element);
-      $($tweet).hover( // add hover event handler to each article
+      $($tweet).hover(
+        // add hover event handler to each article
         function () {
           $("footer > div", this).addClass("hover-div"); // on hover, footer icons become visible
           $("header img", this).addClass("hover-div"); // avatar img more visible
@@ -44,16 +46,25 @@ $(document).ready(function () {
 
   $("form").on("submit", function (event) {
     event.preventDefault();
-    $(".error").hide();
-    $.ajax({ method: "POST", url: "/tweets", data: $(this).serialize() })
+    let textValue;
+    if (
+      $("#tweet-text").val().length > 0 &&
+      $("#tweet-text").val().length <= 140
+    ) {
+      // client side validation to prevent duplicate requests
+      textValue = $("#tweet-text").val();
+      $("#tweet-text").val(""); // empty text area
+    }
+    $(".error").hide(); // reset error element before form request
+    $.ajax({ method: "POST", url: "/tweets", data: { text: textValue } })
       .done(() => {
         $.ajax("/tweets", { method: "GET" }).done((tweetsArray) => {
           renderTweets(tweetsArray);
         });
-        $(".counter").text(140); // reset and show char count after submitting
         $("#tweet-text").val(""); // empty text area
+        $(".counter").text(140); // reset and show char count after submitting
       })
-      .fail(xhr => {
+      .fail((xhr) => {
         // error handling
         $("#tweet-text").addClass("c-error");
         $(".error").text(xhr.responseJSON.error);
@@ -63,7 +74,8 @@ $(document).ready(function () {
       });
   });
 
-  $("nav > button").click(() => { // compose button in nav - toggle form's hideability
+  $("nav > button").click(() => {
+    // compose button in nav - toggle form's hideability
     if ($("form").first().is(":hidden")) {
       $("form").slideDown("fast", () => {
         $("#tweet-text").focus();
@@ -71,7 +83,8 @@ $(document).ready(function () {
     } else $("form").slideUp("fast");
   });
 
-  const timeSincePost = (dateEpoch) => { // calculate time difference since post creation
+  const timeSincePost = (dateEpoch) => {
+    // calculate time difference since post creation
     let unit = "second";
     let diff = (new Date().getTime() - dateEpoch) / 1000;
 
