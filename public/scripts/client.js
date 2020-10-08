@@ -48,16 +48,15 @@ $(document).ready(function () {
 
   $("form").on("submit", function (event) {
     event.preventDefault();
-    let textValue;
+    const textValue = $("#tweet-text").val(); // store text value for ajax request
     if ( // client side validation to prevent duplicate requests
       $("#tweet-text").val().length > 0 &&
       $("#tweet-text").val().length <= 140
     ) {
-      textValue = $("#tweet-text").val(); // store text value for ajax request
-      $("#tweet-text").val(""); // empty field
+      $("#tweet-text").val(""); // empty field immediately on valid request
     }
     $(".error").hide(); // reset error element before form request
-    $.ajax({ method: "POST", url: "/tweets", data: { text: textValue } })
+    $.ajax({ method: "POST", url: "/tweets", data: { text: textValue } }) // use text value as req param
       .done(() => {
         $.ajax("/tweets", { method: "GET" }).done((tweetsArray) => {
           renderTweets(tweetsArray);
