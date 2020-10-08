@@ -35,12 +35,18 @@ Interpret keys and values in request data to object format
 
 ## Documentation
 
-The following functions can be found in /public/scripts:
+**The following functions can be found in /public/scripts/client.js:**
 
 - `createTweetElement(obj)`: returns JQ object constructed from object's data properties
 - `timeSincePost(num)`: calculate time since post, returns string to be appended in script
 - `renderTweets(arr)`: use loop iteration to append all tweets to html section container
+
+**/public/scripts/composer-anchor-toggle.js:**
+
 - `scrollFunction()`: reveals to-top button when reaching 170px from top of document, else hides the button.
+
+**/public/scripts/composer-char-counter.js:**
+
 - `colorCharCounter()`: adds red color to number display when exceeding char limit, assigns number to html element
 
 ## Dependencies

@@ -2,13 +2,21 @@ $txtcolor-nav: rgba(11, 223, 205, 0.719);
 $bgcolor-nav: hsla(258, 62%, 60%, 0.678);
 $font-stack1: "Source Sans Pro", sans-serif;
 $font-stack2: Bungee;
-$button-ptr: pointer;
+$btn-ptr: pointer;
 $bgbody: #f4f1ec;
 $txtbody: #545149;
+$bgprofile: rgb(215, 213, 216);
+$navbtn-color: hsla(258, 72%, 70%, 0.078);
 
-@mixin flexTemplate($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
+@mixin flex-template($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin text-wrap-body {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }

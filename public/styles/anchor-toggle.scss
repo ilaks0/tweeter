@@ -5,13 +5,13 @@
   background-color: $bgcolor-nav;
   width: 2em;
   height: 2em;
-  @include flexTemplate(row, center, center);
+  @include flex-template(row, center, center);
   border: none;
   position: fixed;
   bottom: 2.5em;
   right: 2.5em;
   color: rgba(11, 223, 205, 0.719);
-  cursor: $button-ptr;
+  cursor: $btn-ptr;
 }
 
 .anchor-toggle:hover {
@@ -21,5 +21,5 @@
 
 button {
   outline: none;
-  cursor: $button-ptr;
+  cursor: $btn-ptr;
 }
