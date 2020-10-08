@@ -55,3 +55,4 @@ Interpret keys and values in request data to object format
 - Node 5.10.x or above
 - body-parser
 - md5
+- chance
