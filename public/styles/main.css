@@ -135,7 +135,7 @@ body {
 
 button {
   outline: none;
-  cursor: cursor;
+  cursor: pointer;
 }
 
 nav {

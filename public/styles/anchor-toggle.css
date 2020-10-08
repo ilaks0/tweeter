@@ -79,6 +79,6 @@ nav button:after {
 
 button {
   outline: none;
-  cursor: cursor;
+  cursor: pointer;
 }
 /*# sourceMappingURL=anchor-toggle.css.map */

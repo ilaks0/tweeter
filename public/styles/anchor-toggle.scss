@@ -1,5 +1,4 @@
 @import './variables';
-@import './_nav';
 
 .anchor-toggle {
   border-radius: 100%;
@@ -12,7 +11,7 @@
   bottom: 2.5em;
   right: 2.5em;
   color: rgba(11, 223, 205, 0.719);
-  cursor: pointer;
+  cursor: $button-ptr;
 }
 
 .anchor-toggle:hover {
