@@ -1,0 +1,12 @@
+@import './variables';
+
+.profile {
+    padding-top: 120px;
+    @include flexTemplate(column, center, center);
+    height: 520px;
+    background-color: rgb(215, 213, 216);
+    background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+    font-family: inherit;
+  }
+  
+

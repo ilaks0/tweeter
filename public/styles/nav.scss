@@ -1,4 +1,29 @@
-@import './nav';
+@import './variables';
+
+nav {
+  padding: 1.5em;
+  @include flexTemplate(row, space-around, flex-end);
+  box-sizing: border-box;
+  height: 120px;
+  font-family: Bungee;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: hsla(258, 62%, 60%, 0);
+  span {
+    font-size: 2em;
+    color: $txtcolor-nav;
+  }
+  button {
+    align-self: center;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    cursor: pointer;
+    background-color: hsla(258, 72%, 70%, 0.078);
+    border: none;
+    &:before { content: "\00bb"; }
+    &:after { content: " \00ab"; }
+  }
+}
 
 @keyframes glow {
   from {
