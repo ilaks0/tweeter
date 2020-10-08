@@ -49,13 +49,13 @@ $(document).ready(function () {
   $("form").on("submit", function (event) {
     event.preventDefault();
     let textValue;
-    if (
+    if ( // client side validation to prevent duplicate requests
       $("#tweet-text").val().length > 0 &&
       $("#tweet-text").val().length <= 140
     ) {
-      // client side validation to prevent duplicate requests
-      textValue = $("#tweet-text").val();
-      $("#tweet-text").val(""); // empty text area
+      
+      textValue = $("#tweet-text").val(); // store text value for ajax request
+      $("#tweet-text").val(""); // empty field
     }
     $(".error").hide(); // reset error element before form request
     $.ajax({ method: "POST", url: "/tweets", data: { text: textValue } })
