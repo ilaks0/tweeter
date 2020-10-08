@@ -1,11 +1,69 @@
+nav {
+  padding: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 120px;
+  font-family: Bungee;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(128, 90, 216, 0);
+}
+
+nav span {
+  font-size: 2em;
+  color: rgba(11, 223, 205, 0.719);
+}
+
+nav button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+          animation: glow 1.5s ease-in-out infinite alternate;
+  cursor: pointer;
+  background-color: rgba(156, 123, 234, 0.078);
+  border: none;
+}
+
+nav button:before {
+  content: "\00bb";
+}
+
+nav button:after {
+  content: " \00ab";
+}
+
 .anchor-toggle {
   border-radius: 100%;
-  background-color: hsla(258, 62%, 60%, 0.678);
+  background-color: rgba(128, 90, 216, 0.678);
   width: 2em;
   height: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border: none;
   position: fixed;
   bottom: 2.5em;
@@ -21,5 +79,6 @@
 
 button {
   outline: none;
-  cursor: pointer;
+  cursor: cursor;
 }
+/*# sourceMappingURL=anchor-toggle.css.map */

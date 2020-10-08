@@ -1,10 +1,11 @@
+@import './variables';
+
 @mixin flexTemplate($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
 }
-
 nav {
   padding: 1.5em;
   @include flexTemplate(row, space-around, flex-end);
@@ -17,7 +18,7 @@ nav {
   background-color: hsla(258, 62%, 60%, 0);
   span {
     font-size: 2em;
-    color: rgba(11, 223, 205, 0.719);
+    color: $txtcolor-nav;
   }
   button {
     align-self: center;
