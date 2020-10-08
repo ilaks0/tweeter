@@ -68,6 +68,10 @@ form span {
   font-weight: bold;
 }
 
+.blur {
+  opacity: 0;
+}
+
 .counter {
   margin-right: 1.5em;
 }

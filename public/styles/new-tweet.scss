@@ -36,8 +36,11 @@ form {
   }
 }
 .red {
-    color: red;
-    font-weight: bold;
+  color: red;
+  font-weight: bold;
+}
+.blur {
+  opacity: 0;
 }
 
 .counter {
